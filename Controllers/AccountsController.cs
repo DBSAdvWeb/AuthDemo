@@ -7,13 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AuthDemo.Data;
 using AuthDemo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AuthDemo.Controllers
 {
+    [Authorize]
     public class AccountsController : Controller
     {
         private readonly ApplicationDbContext _context;
-
         public AccountsController(ApplicationDbContext context)
         {
             _context = context;
